@@ -146,6 +146,15 @@ export const configHelperNetworks: Config[] = [
     subgraphUri: 'https://v4.subgraph.optimism-sepolia.oceanprotocol.com',
     explorerUri: 'https://sepolia-optimism.etherscan.io/',
     gasFeeMultiplier: 1.1
+  },
+  {
+    ...configHelperNetworksBase,
+    chainId: 842,
+    network: 'taraxa_testnet',
+    nodeUri: 'https://rpc.testnet.taraxa.io',
+    subgraphUri: 'https://indexer.echo-social.io',
+    explorerUri: 'https://testnet.explorer.taraxa.io/',
+    gasFeeMultiplier: 1
   }
 ]
 
@@ -255,9 +264,9 @@ export class ConfigHelper {
     try {
       addresses = process.env.ADDRESS_FILE
         ? JSON.parse(
-            // eslint-disable-next-line security/detect-non-literal-fs-filename
-            fs.readFileSync(process.env.ADDRESS_FILE, 'utf8')
-          )
+          // eslint-disable-next-line security/detect-non-literal-fs-filename
+          fs.readFileSync(process.env.ADDRESS_FILE, 'utf8')
+        )
         : null
     } catch (e) {
       console.log(e)
