@@ -151,10 +151,16 @@ export const configHelperNetworks: Config[] = [
     ...configHelperNetworksBase,
     chainId: 842,
     network: 'taraxa_testnet',
+    metadataCacheUri: 'https://aquarius.echo-social.io',
     nodeUri: 'https://rpc.testnet.taraxa.io',
+    providerUri: 'https://provider.echo-social.io',
     subgraphUri: 'https://indexer.echo-social.io',
     explorerUri: 'https://testnet.explorer.taraxa.io/',
-    gasFeeMultiplier: 1
+    oceanTokenAddress: '0x1e1173c2a9096bd489181c171b5be53f3367c8b9',
+    oceanTokenSymbol: 'ECHO',
+    fixedRateExchangeAddress: '0x9aAA9692e1b2a284877Ecbd53597dB4C8aA2888D',
+    dispenserAddress: '0x69814e3129b8a2AED940F3BB0CEC910d316B603D',
+    startBlock: 25277
   }
 ]
 
