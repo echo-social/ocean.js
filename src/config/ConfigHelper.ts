@@ -155,7 +155,7 @@ export const configHelperNetworks: Config[] = [
     nodeUri: 'https://rpc.testnet.taraxa.io',
     providerUri: 'https://provider.echo-social.io',
     subgraphUri: 'https://indexer.echo-social.io',
-    explorerUri: 'https://testnet.explorer.taraxa.io/',
+    explorerUri: 'https://testnet.explorer.taraxa.io',
     oceanTokenAddress: '0x1e1173c2a9096bd489181c171b5be53f3367c8b9',
     oceanTokenSymbol: 'ECHO',
     fixedRateExchangeAddress: '0x9aAA9692e1b2a284877Ecbd53597dB4C8aA2888D',
