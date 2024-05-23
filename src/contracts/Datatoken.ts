@@ -522,6 +522,15 @@ export class Datatoken extends SmartContract {
       return <ReceiptOrEstimate<G>>estGas
     }
 
+    if (!estGas) {
+      estGas = await dtContract.estimateGas.startOrder(
+        consumer,
+        serviceIndex,
+        providerFees,
+        consumeMarketFee
+      )
+    }
+
     const trxReceipt = await sendTx(
       estGas,
       this.signer,
