@@ -161,6 +161,21 @@ export const configHelperNetworks: Config[] = [
     fixedRateExchangeAddress: '0x9aAA9692e1b2a284877Ecbd53597dB4C8aA2888D',
     dispenserAddress: '0x69814e3129b8a2AED940F3BB0CEC910d316B603D',
     startBlock: 25277
+  },
+  {
+    ...configHelperNetworksBase,
+    chainId: 841,
+    network: 'taraxa_mainnet',
+    metadataCacheUri: 'https://aquarius.echo-social.io',
+    nodeUri: 'https://rpc.mainnet.taraxa.io',
+    providerUri: 'https://provider.echo-social.io',
+    subgraphUri: 'https://indexer.echo-social.io',
+    explorerUri: 'https://mainnet.explorer.taraxa.io',
+    oceanTokenAddress: '0x24a4a0a8d076ACB3647763a9dAE6Da7081511CD1',
+    oceanTokenSymbol: 'ECHO',
+    fixedRateExchangeAddress: '0x32e9AD3E1Ab23B0594a2f5E1cC19CAF987e48986',
+    dispenserAddress: '0x9E06F70E09d1Bd03dDb217fCE58654959D652e43',
+    startBlock: 10221056
   }
 ]
 
