@@ -500,7 +500,8 @@ export class Datatoken extends SmartContract {
     serviceIndex: number,
     providerFees: ProviderFees,
     consumeMarketFee?: ConsumeMarketFee,
-    estimateGas?: G
+    estimateGas?: G,
+    estGas?: ethers.BigNumber
   ): Promise<ReceiptOrEstimate<G>> {
     const dtContract = this.getContract(dtAddress)
     if (!consumeMarketFee) {
@@ -511,13 +512,24 @@ export class Datatoken extends SmartContract {
       }
     }
 
-    const estGas = await dtContract.estimateGas.startOrder(
-      consumer,
-      serviceIndex,
-      providerFees,
-      consumeMarketFee
-    )
-    if (estimateGas) return <ReceiptOrEstimate<G>>estGas
+    if (estimateGas) {
+      estGas = await dtContract.estimateGas.startOrder(
+        consumer,
+        serviceIndex,
+        providerFees,
+        consumeMarketFee
+      )
+      return <ReceiptOrEstimate<G>>estGas
+    }
+
+    if (!estGas) {
+      estGas = await dtContract.estimateGas.startOrder(
+        consumer,
+        serviceIndex,
+        providerFees,
+        consumeMarketFee
+      )
+    }
 
     const trxReceipt = await sendTx(
       estGas,
